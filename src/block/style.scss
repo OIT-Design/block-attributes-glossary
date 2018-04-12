@@ -1,0 +1,83 @@
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+
+ .blocks-heading {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+ }
+
+.block {
+  background-color: #333;
+  width: 100%;
+  margin-top: 1em;
+  padding-top: 1em;
+  color: white;
+  & > h4 {
+    padding: 1em 1em 0;
+    margin: 0;
+    color: #000;
+    background-color: #f2f2f2;
+    font-size: 1.2em;
+    display: none;
+  }
+  & > svg {
+    float: left;
+    margin-top: .2em;
+    margin-left: 1em;
+    height: 2em;
+    width: 2em;
+    fill: #fff;
+  }
+  &-title {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+  }
+  &-headline {
+    display: inline-block;
+    padding-left: 1em;
+  }
+  &-index {
+    & > ul {
+      display: grid;
+      grid-template-columns: repeat( auto-fit, minmax(12em, 1fr) );
+    }
+  }
+  
+}
+
+.attributes {
+  list-style-type: none;
+  color: #000;
+  background-color: #f2f2f2;
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(12em, 1fr) );
+  margin-bottom: 0;
+}
+
+.attribute {
+  padding: 1em;
+  &:before {
+    content: "";
+    display: none;
+    
+  }
+  &-name {
+    text-transform: initial;
+  }
+  &-property {
+    &-name {
+
+    }
+    &-value {
+      font-style: italic;
+    }
+  }
+}
