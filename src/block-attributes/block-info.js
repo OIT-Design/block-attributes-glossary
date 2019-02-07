@@ -2,7 +2,6 @@ import { Attribute } from './attribute';
 const { Dashicon } = wp.components;
 
 export const BlockInfo = ( { title, name, attributes, icon } ) => {
-	if ( title === 'Gallery' ) {console.log( icon );}
 	return (
 		<div className="block" id={ 'block-' + name.replace( '/', '' ) }>
 			<Dashicon icon={ icon.src } />
