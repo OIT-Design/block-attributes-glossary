@@ -13,6 +13,8 @@ import { BlockGlossary } from './block-glossary';
 const { __ } = wp.i18n;
 const { registerBlockType, getBlockTypes } = wp.blocks;
 
+let update = false;
+
 /**
  * Register: aa Gutenberg Block.
  *
@@ -37,21 +39,31 @@ registerBlockType( 'ncsu-blocks/block-attributes', {
 
 	],
 
-	edit: function( props ) {
-		//console.log(getBlockTypes())
+	attributes: {
+		blocks: {
+			type: 'array',
+			default: [],
+		},
+	},
 
+	edit: function( props ) {
+		const blocks = getBlockTypes();
+		if ( ! update ) {
+			update = true;
+			const blockInfo = blocks.map( ( { title, name, attributes, icon, category, keywords } ) => ( {
+				title, name, attributes, icon, category, keywords,
+			} ) );
+			props.setAttributes( { blocks: blockInfo } );
+		}
+		console.log( props.attributes.blocks );
 		return (
 			<div className={ props.className }>
-				<BlockGlossary blocks={ getBlockTypes() } />
+				<BlockGlossary blocks={ blocks } />
 			</div>
 		);
 	},
 
 	save: function( props ) {
-		return (
-			<div className={ props.className }>
-				<BlockGlossary blocks={ getBlockTypes() } />
-			</div>
-		);
+		return null;
 	},
 } );

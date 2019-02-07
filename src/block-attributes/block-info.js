@@ -2,7 +2,7 @@ import { Attribute } from './attribute';
 const { Dashicon } = wp.components;
 
 export const BlockInfo = ( { title, name, attributes, icon } ) => {
-	console.log( icon.src, name );
+	if ( title === 'Gallery' ) {console.log( icon );}
 	return (
 		<div className="block" id={ 'block-' + name.replace( '/', '' ) }>
 			<Dashicon icon={ icon.src } />
@@ -12,7 +12,7 @@ export const BlockInfo = ( { title, name, attributes, icon } ) => {
 			</div>
 			<h4>Attributes</h4>
 			<ul className="attributes">
-				{ Object.keys( attributes ).map( ( e, i ) => <Attribute key={ i } name={ e } data={ attributes[ e ] } /> ) }
+				{ attributes && Object.keys( attributes ).map( ( e, i ) => <Attribute key={ i } name={ e } data={ attributes[ e ] } /> ) }
 			</ul>
 		</div>
 	);

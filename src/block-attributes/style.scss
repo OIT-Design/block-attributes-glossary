@@ -18,7 +18,11 @@
   width: 100%;
   margin-top: 1em;
   padding-top: 1em;
-  color: white;
+	color: white;
+	&-name {
+		margin-bottom: 0;
+		font-weight: normal;
+	}
   & > h4 {
     padding: 1em 1em 0;
     margin: 0;
@@ -47,10 +51,15 @@
   &-index {
     & > ul {
       display: grid;
-      grid-template-columns: repeat( auto-fit, minmax(12em, 1fr) );
+      grid-template-columns: repeat( auto-fit, minmax(15em, 1fr) );
     }
-  }
-  
+	}
+	&-icon {
+		font-size: 2em;
+		margin-left: 0.5em;
+		margin-top: 0.1em;
+	}
+
 }
 
 .attributes {
@@ -58,7 +67,7 @@
   color: #000;
   background-color: #f2f2f2;
   display: grid;
-  grid-template-columns: repeat( auto-fit, minmax(12em, 1fr) );
+  grid-template-columns: repeat( auto-fit, minmax(15em, 1fr) );
   margin-bottom: 0;
 }
 
@@ -67,15 +76,23 @@
   &:before {
     content: "";
     display: none;
-    
-  }
+	}
+	& > ul {
+		padding-left: 0;
+	}
   &-name {
-    font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
-    text-transform: initial;
+		font-family: Verdana, Geneva, Tahoma, sans-serif;
+		text-transform: initial;
+		overflow-wrap: break-word;
+		font-weight: normal;
   }
   &-property {
+		&:before {
+			content: "";
+			display: none;
+		}
     &-name {
-
+			color: #666;
     }
     &-value {
       font-style: italic;

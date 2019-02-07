@@ -62,3 +62,5 @@ function block_attributes_editor_assets() {
 
 // Hook: Editor assets.
 add_action( 'enqueue_block_editor_assets', 'block_attributes_editor_assets' );
+
+require_once plugin_dir_path( __FILE__ ) . '/block-attributes/render.php';
